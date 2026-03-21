@@ -25,16 +25,17 @@ Selected highlights:
 - 10x throughput optimization on real-time pricing systems at StockX
 - End-to-end real-time analytics pipeline (Kafka to Databricks) at May Mobility
 - Avro Schema Registry pilot for high-traffic Kafka clusters at StockX
+- [Cluster Yield](https://clusteryield.app) — my Spark performance analytics platform (WIP SaaS)
 
 ## Engagement options
 
 I offer consulting through [Fiverr](https://www.fiverr.com/) for scoped engagements, or direct for longer-term work.
 
-**Spark Plan Audit ($150)** — Send me your physical plan, get back a written audit with savings estimates. 3-day turnaround.
+**Spark Plan Audit** — Send me your physical plan, get back a written audit with savings estimates. 3-day turnaround.
 
-**Performance Optimization ($500)** — Full audit plus implemented fixes, refactored code, config recommendations, and a 30-minute walkthrough call. 7-day turnaround.
+**Performance Optimization** — Full audit plus implemented fixes, refactored code, config recommendations, and a 30-minute walkthrough call. 7-day turnaround.
 
-**Architecture Consulting ($1,200+)** — Full platform review with architecture document, optimization roadmap, cost projections, and two video calls. 14-day turnaround.
+**Architecture Consulting** — Full platform review with architecture document, optimization roadmap, cost projections, and two video calls. 14-day turnaround.
 
 For custom engagements or longer-term consulting, reach out directly.
 
