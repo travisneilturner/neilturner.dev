@@ -31,6 +31,8 @@ And third, the Fivetran/dbt/pipeline layer is the layer that atrophies, because 
 
 The new data stack isn't organized around 'SaaS apps don't talk to each other'.  It becomes two primary layers and a projection layer. Agents and event logs are analogous to compute and storage.  Derived stores/dynamic projections are analogous to memory.  The ETL layer fades because its original problem is dissolving.  
 
+Lastly, and perhaps most importantly, I'll point out that today's operational and analytical domains run on completely separate infrastructure connected by a scheduled copy job to get data into the warehouse. In the new architecture, they share the same event substrate. The orders machinery writes orders.placed to a Kafka topic. The fraud agent, the analytics agent, and the reporting agent all wire themselves up to consume from the same topic through independent consumer groups. The bridge between the two domains disappears. What remains is computation, agent machinery consuming shared topics and materializing the views they need.   
+
 ![Current vs. agent-era data stack](/images/data-stack-before-and-after.png)
 
 ## The log is demanded by the operational reality
@@ -40,6 +42,9 @@ When autonomous data agents start making consequential business decisions at the
 It's not a stretch to see why this continues to be important.  We all know that agents make stuff up sometimes, so we are going to need durable logs that record these decisions, in addition to the raw data passing between the components of an org.  The event log is the only data structure that gives you the ability to completely replay a sequence of events that led up to a decision.  This will continue to be vital for compliance and auditing purposes, because even if agents eventually develop long-term memory, an agent's self-reported history is not an independent audit trail. The log exists because you need a record the agent can't edit (and this should be disabled at the platform level).  
 
 None of the current thinking that I'm aware of in the A2A protocol space aligns perfectly with this as of today, but from where I'm sitting it's the only logical choice to solve the problem of tracing an agent's behavior in a large distributed A2A system. In order to guarantee auditability, you need ordering guarantees, durability, and replayability, and no other data structure provides all three as naturally as the distributed log. Most agentic systems today record agent actions to Postgres, which works fine for a single application with a handful of agents. It won't scale easily to hundreds or thousands of collaborative agents all working together to churn through data from humans, applications, and other agents. Kafka, on the other hand, handles this kind of write volume without breaking a sweat. 
+
+Why Kafka specifically and not any other append-only store?  Because Kafka handles two layers of the architecture simultaneously.  Layer 1 is the first-order domain events that flow between different parts of the system.  Layer 2 is the orchestration layer where the agent records user questions, decisions, actions, observations, thoughts, and so on.  Both of these layers are append-only, durable event logs at their core.  You might be thinking "so is Delta lake or a Parquet partition" and you're right.  At the end of the day it all flows back to S3. But Kafka fits best here because it's the only infrastructure that serves as both a real-time transport layer and a durable, ordered, replayable event store. Delta Lake gives you the store without the transport. A message queue gives you the transport without the durability. Kafka gives you both.   
+
 
 ## The event topology self-organizes
 
