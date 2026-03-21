@@ -1,0 +1,62 @@
+baseURL = "https://neilturner.dev/"
+languageCode = "en-us"
+title = "Neil Turner"
+theme = "PaperMod"
+[pagination]
+  pagerSize = 10
+
+[params]
+  author = "Neil Turner"
+  description = "Staff Data Engineer. 15 years building event-driven data platforms. Currently open to new opportunities."
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = false
+  ShowCodeCopyButtons = true
+  ShowToc = true
+  TocOpen = false
+  defaultTheme = "auto"
+  disableThemeToggle = false
+
+  [params.homeInfoParams]
+    Title = "Neil Turner"
+    Content = "Staff Data Engineer. 15 years building event-driven data platforms at Riot Games, Microsoft, Amazon, StockX, and May Mobility. I write about distributed systems, streaming architecture, and the future of data infrastructure."
+
+  [[params.socialIcons]]
+    name = "linkedin"
+    url = "https://linkedin.com/in/neil-turner-8978115"
+
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/clusteryieldanalytics"
+
+  [[params.socialIcons]]
+    name = "email"
+    url = "mailto:travisneilturner@gmail.com"
+
+[menu]
+  [[menu.main]]
+    identifier = "blog"
+    name = "Blog"
+    url = "/blog/"
+    weight = 10
+
+  [[menu.main]]
+    identifier = "consulting"
+    name = "Work With Me"
+    url = "/consulting/"
+    weight = 20
+
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 30
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[markup]
+  [markup.highlight]
+    style = "monokai"
+    lineNos = false

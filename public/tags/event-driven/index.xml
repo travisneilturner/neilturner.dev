@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Event-Driven on Neil Turner</title>
+    <link>http://localhost:1313/tags/event-driven/</link>
+    <description>Recent content in Event-Driven on Neil Turner</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 20 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/event-driven/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Event Log Is the Foundation of the Agent Economy</title>
+      <link>http://localhost:1313/blog/event-log-agent-economy/</link>
+      <pubDate>Fri, 20 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/event-log-agent-economy/</guid>
+      <description>The event log is the natural substrate for agent-to-agent communication. Most of what we currently call the modern data stack is a transitional architecture that exists to solve a problem agents won&amp;#39;t have.</description>
+    </item>
+  </channel>
+</rss>
