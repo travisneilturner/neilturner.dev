@@ -1,9 +1,9 @@
 ---
-title: "The Event Log Is the Foundation of the Agent Economy"
-date: 2026-03-20
+title: "The Event Log Is the Natural Substrate for Agentic Data Infrastructure"
+date: 2026-03-21
 draft: false
 tags: ["kafka", "agents", "event-driven", "data-engineering", "streaming"]
-description: "The event log is the natural substrate for agent-to-agent communication. Most of what we currently call the modern data stack is a transitional architecture that exists to solve a problem agents won't have."
+description: "The event log is the natural substrate for agentic data infrastructure.  The agentic data stack coalesces naturally around orchestrating streams of data."
 author: "Neil Turner"
 ShowToc: true
 TocOpen: false
